@@ -1,0 +1,23 @@
+consul-alerts (1433233571) trusty; urgency=medium
+
+  * Automated build created on Tue Jun  2 13:56:11 IST 2015
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Tue, 02 Jun 2015 13:56:12 +0530
+
+consul-alerts (1433233520) trusty; urgency=medium
+
+  * Automated build created on Tue Jun  2 13:55:20 IST 2015
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Tue, 02 Jun 2015 13:55:21 +0530
+
+consul-alerts (1433233403) trusty; urgency=medium
+
+  * Automated build created on Tue Jun  2 13:53:23 IST 2015
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Tue, 02 Jun 2015 13:53:24 +0530
+consul-alerts (1433178940) trusty; urgency=medium
+
+  * Initial release
+  * Automated build created on Mon Jun  1 22:45:40 IST 2015
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Mon, 01 Jun 2015 22:45:40 +0530

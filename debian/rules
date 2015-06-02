@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+
+PKG_NAME=consul-alerts
+BASE_URL=https://bintray.com/artifact/download/darkcrux/generic
+UPSTREAM_FILE=consul-alerts-latest-linux-amd64.tar
+
+DIST=trusty
+
+RJIL_VERSION=$(shell date +%s)
+HUMAN_VERSION=$(shell date --date \@$(RJIL_VERSION) )
+
+export BUILT_VERSION=$(shell dpkg-parsechangelog   | grep ^Version:  | cut -d ' ' -f2 | cut -d ':' -f2)
+
+get-orig-source:
+	wget -c $(BASE_URL)/$(UPSTREAM_FILE) -O ../$(UPSTREAM_FILE) || exit 1
+
+%:
+	dh $@
+
+#override_dh_auto_clean:
+#	dh_auto_clean
+
+override_dh_clean: populate-changelog
+	[ ! -d debian/consul-alerts ] || rm -rf debian/consul-alerts
+	[ ! -f debian/consul-alerts.debhelper.log ]  || rm -f debian/consul-alerts.debhelper.log
+	[ ! -f debian/consul-alerts.substvars ] || rm -f debian/consul-alerts.substvars
+	[ ! -f consul-alerts-[0-9]* ] || rm -f consul-alerts-[0-9]*
+	dh_clean
+	#rm -f  $(UPSTREAM_FILE)
+
+
+override_dh_install: 
+	test -f ../$(UPSTREAM_FILE) && tar -xavf ../$(UPSTREAM_FILE) -C .
+	test -f consul-alerts &&  mv -f consul-alerts consul-alerts-$(BUILT_VERSION)
+	dh_install  consul-alerts-$(BUILT_VERSION) usr/bin/
+	dh_link usr/bin/consul-alerts-$(BUILT_VERSION) usr/bin/consul-alerts
+
+populate-changelog:
+	dch --newversion $(RJIL_VERSION) "Automated build created on $(HUMAN_VERSION)"
+	dch -D $(DIST) -r ""
+
+.PHONY: get-orig-source

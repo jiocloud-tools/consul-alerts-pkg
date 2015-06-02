@@ -1,0 +1,6 @@
+# Compulsory line, this is a version 3 file
+#
+# For now, this doesn't work because the base URL gives a 404
+version=3
+#https://bintray.com/artifact/download/darkcrux/generic/consul-alerts-(.+)\-linux-amd64\.tar
+https://bintray.com/artifact/download/darkcrux/generic/consul-alerts-latest-linux-amd64\.tar

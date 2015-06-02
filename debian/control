@@ -1,0 +1,13 @@
+Source: consul-alerts
+Section: net
+Priority: optional
+Maintainer: Ritesh Raj Sarraf <Ritesh.Sarraf@ril.com>
+Build-Depends: debhelper (>= 9), wget
+Standards-Version: 3.9.2
+#Homepage: http://consul.io
+
+Package: consul-alerts
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: consul-alerts binary package
+  This is a binary package for consul-alerts.

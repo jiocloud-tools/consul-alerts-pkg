@@ -1,0 +1,4 @@
+The consul-alerts binary tarball is fetched from:
+https://bintray.com/artifact/download/darkcrux/generic/consul-alerts-latest-linux-amd64.tar
+
+Since there is no file name based versioning, we use the `date +%s` to determine which binary build is in use
