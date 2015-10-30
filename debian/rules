@@ -35,7 +35,8 @@ override_dh_install:
 	dh_install  consul-alerts-$(BUILT_VERSION) usr/bin/
 	dh_link usr/bin/consul-alerts-$(BUILT_VERSION) usr/bin/consul-alerts
 
-#populate-changelog:
+populate-changelog:
+	echo "changelog deprcated"
 	#dch --newversion $(RJIL_VERSION) "Automated build created on $(HUMAN_VERSION)"
 	#dch -D $(DIST) -r ""
 
