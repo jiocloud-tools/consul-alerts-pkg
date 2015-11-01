@@ -30,8 +30,8 @@ override_dh_clean: populate-changelog
 
 
 override_dh_install: 
-	test -f ../$(UPSTREAM_FILE) && tar -xavf ../$(UPSTREAM_FILE) -C .
-	test -f consul-alerts &&  mv -f consul-alerts consul-alerts-$(BUILT_VERSION)
+	#test -f ../$(UPSTREAM_FILE) && tar -xavf ../$(UPSTREAM_FILE) -C .
+	#test -f consul-alerts &&  mv -f consul-alerts consul-alerts-$(BUILT_VERSION)
 	dh_install  consul-alerts-$(BUILT_VERSION) usr/bin/
 	dh_link usr/bin/consul-alerts-$(BUILT_VERSION) usr/bin/consul-alerts
 
