@@ -29,11 +29,11 @@ override_dh_clean: populate-changelog
 	#rm -f  $(UPSTREAM_FILE)
 
 
-override_dh_install: 
+#override_dh_install: 
 	#test -f ../$(UPSTREAM_FILE) && tar -xavf ../$(UPSTREAM_FILE) -C .
 	#test -f consul-alerts &&  mv -f consul-alerts consul-alerts-$(BUILT_VERSION)
-	dh_install  consul-alerts-$(BUILT_VERSION) usr/bin/
-	dh_link usr/bin/consul-alerts-$(BUILT_VERSION) usr/bin/consul-alerts
+	#dh_auto_install  
+	#dh_link usr/bin/consul-alerts-$(BUILT_VERSION) usr/bin/consul-alerts
 
 populate-changelog:
 	echo "changelog deprcated"
